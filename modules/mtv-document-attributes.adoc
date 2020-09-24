@@ -1,0 +1,11 @@
+:icons:
+:experimental:
+:toc: macro
+:toc-title:
+:imagesdir: images
+:prewrap!:
+:mtv-short: MTV
+:mtv-full: Migration Toolkit for Virtualization
+:mtv-first: {mtv-full} ({mtv-short})
+:mtv-version: 2.0
+:virt: OpenShift Virtualization
