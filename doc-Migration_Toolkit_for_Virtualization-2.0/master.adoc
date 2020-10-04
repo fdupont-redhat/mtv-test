@@ -12,5 +12,4 @@ include::modules/mtv-document-attributes.adoc[]
 include::modules/About-mtv.adoc[leveloffset=+1]
 include::modules/Installing-mtv.adoc[leveloffset=+1]
 
-
 :mtv!:
