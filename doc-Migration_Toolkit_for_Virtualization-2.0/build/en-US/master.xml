@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<?asciidoc-toc maxdepth="3"?><book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+<info>
+<title>Migration Toolkit for Virtualization</title><subtitle>Migrating from VMware to Red Hat OpenShift Virtualization</subtitle>
+
+<date>2020-10-04</date>
+<productname>Migration Toolkit for Virtualization</productname>
+<productnumber>2.0</productnumber>
+<abstract>
+    <para>This guide describes how to migrate VMware virtual machines to Red Hat OpenShift Virtualization.</para>
+</abstract>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Author_Group.xml"/>
+</info>
+<chapter xml:id="about-mtv_mtv">
+<title>About MTV</title>
+<simpara>The Migration Toolkit for Virtualization (MTV) enables you to migrate a large number of virtual machines from VMWare vSphere to OpenShift Virtualization. MTV is deployed as an OpenShift Operator.</simpara>
+<simpara>To be edited:</simpara>
+<simpara>When the operator is deployed, three new custom resource definitions are added to the API:</simpara>
+<simpara>Provider - It stores the attributes of a source or destination provider. These attributes are used to connect to and interact with the provider.
+Plan - It is a list of virtual machines that will be migrated together and with the same migration parameters. A throttling mechanism picks the ones that will fit in the available migration resources, until all the virtual machines have been migrated.
+Mapping - Rather than specifying the source / destination pairs for each device of each virtual machine, it is possible to create a mapping that is used to rewire all the virtual machines of the plan on the OpenShift Virtualization side.
+Migration - It is an instance of a Plan execution, including the progress aggregation. If one virtual machine of the Plan failed to be migrated, it is possible to start a new Migration with the same Plan and only the virtual machines that have not been migrated previously will be migrated.</simpara>
+<simpara>Along with the custom resource definitions, there are four new services running in the cluster:</simpara>
+<simpara>Provider Inventory Service - It connects to the source or destination providers and gathers a local inventory that is used to create the mappings and plans. Each provider has its own inventory pod to allow for better scalability.
+Validation Service - It ships the rules to verify the virtual machine’s suitability to run in OpenShift Virtualization. The Provider Inventory Service calls it whenever the configuration of a virtual machine changes and stores the validation status for better reactivity.
+User Interface - It proposes a graphical experience to manipulate the custom resources managed by Migration Toolkit for Virtualization. It also provides a visual representation of the state of these resources, as well as progress for the migration processes.
+Controllers - They implement the logic to reconcile the custom resources with the state defined by the user. For example, when a Plan is created, it runs a series of validations and labels the CR with the results ; if some blocker is found, the Plan stays in state NotReady and no Migration can start from this Plan. It also aggregates the state of related custom resources to provide a holistic and consistent state of the migration solution.</simpara>
+</chapter>
+<chapter xml:id="installing-mtv_mtv">
+<title>Installing the Migration Toolkit for Virtualization</title>
+<simpara>This paragraph is the procedure module introduction: a short description of the procedure.</simpara>
+<bridgehead xml:id="prerequisites" renderas="sect2" remap="_prerequisites">Prerequisites</bridgehead>
+<itemizedlist>
+<listitem>
+<simpara>A bulleted list of conditions that must be satisfied before the user starts following this assembly.</simpara>
+</listitem>
+<listitem>
+<simpara>You can also link to other modules or assemblies the user must follow before starting this assembly.</simpara>
+</listitem>
+<listitem>
+<simpara>Delete the section title and bullets if the assembly has no prerequisites.</simpara>
+</listitem>
+</itemizedlist>
+<bridgehead xml:id="procedure" renderas="sect2" remap="_procedure">Procedure</bridgehead>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Start each step with an active verb.</simpara>
+</listitem>
+<listitem>
+<simpara>Include one command or action per step.</simpara>
+</listitem>
+<listitem>
+<simpara>Use an unnumbered bullet (*) if the procedure includes only one step.</simpara>
+</listitem>
+</orderedlist>
+<bridgehead xml:id="additional_resources" renderas="sect2" remap="_additional_resources">Additional resources</bridgehead>
+<itemizedlist>
+<listitem>
+<simpara>A bulleted list of links to other material closely related to the contents of the procedure module.</simpara>
+</listitem>
+<listitem>
+<simpara>For more details on writing procedure modules, see the <link xlink:href="https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide">Modular Documentation Reference Guide</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Use a consistent system for file names, IDs, and titles. For tips, see <emphasis>Anchor Names and File Names</emphasis> in <link xlink:href="https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide">Modular Documentation Reference Guide</link>.</simpara>
+</listitem>
+</itemizedlist>
+</chapter>
+</book>
