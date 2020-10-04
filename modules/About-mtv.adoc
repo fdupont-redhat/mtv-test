@@ -13,9 +13,9 @@ To be edited:
 
 When the {mtv-short} Operator is deployed, the following Custom Resources (CRs) are added to the API:
 
-* Provider - It stores the attributes of a source or destination provider. These attributes are used to connect to and interact with the provider.
-* Plan - It is a list of virtual machines that will be migrated together and with the same migration parameters. A throttling mechanism picks the ones that will fit in the available migration resources, until all the virtual machines have been migrated.
-* Mapping - Rather than specifying the source / destination pairs for each device of each virtual machine, it is possible to create a mapping that is used to rewire all the virtual machines of the plan on the OpenShift Virtualization side.
+* Provider: The Provider CR stores the attributes of a source or target provider. These attributes are used to connect to and interact with the provider.
+* Plan: The Plan CR is a list of virtual machines that are migrated together, with the same migration parameters. A throttling mechanism selects the VMs that will fit in the available migration resources, until all the VMs are migrated.
+* Mapping: The Mapping CR maps the source and target VMs and devices.
 * Migration - It is an instance of a Plan execution, including the progress aggregation. If one virtual machine of the Plan failed to be migrated, it is possible to start a new Migration with the same Plan and only the virtual machines that have not been migrated previously will be migrated.
 
 Along with the custom resource definitions, there are four new services running in the cluster:
