@@ -11,16 +11,16 @@ The {mtv-first} enables you to migrate a large number of virtual machines from V
 
 To be edited:
 
-When the operator is deployed, three new custom resource definitions are added to the API:
+When the {mtv-short} Operator is deployed, the following Custom Resources (CRs) are added to the API:
 
-Provider - It stores the attributes of a source or destination provider. These attributes are used to connect to and interact with the provider.
-Plan - It is a list of virtual machines that will be migrated together and with the same migration parameters. A throttling mechanism picks the ones that will fit in the available migration resources, until all the virtual machines have been migrated.
-Mapping - Rather than specifying the source / destination pairs for each device of each virtual machine, it is possible to create a mapping that is used to rewire all the virtual machines of the plan on the OpenShift Virtualization side.
-Migration - It is an instance of a Plan execution, including the progress aggregation. If one virtual machine of the Plan failed to be migrated, it is possible to start a new Migration with the same Plan and only the virtual machines that have not been migrated previously will be migrated.
+* Provider - It stores the attributes of a source or destination provider. These attributes are used to connect to and interact with the provider.
+* Plan - It is a list of virtual machines that will be migrated together and with the same migration parameters. A throttling mechanism picks the ones that will fit in the available migration resources, until all the virtual machines have been migrated.
+* Mapping - Rather than specifying the source / destination pairs for each device of each virtual machine, it is possible to create a mapping that is used to rewire all the virtual machines of the plan on the OpenShift Virtualization side.
+* Migration - It is an instance of a Plan execution, including the progress aggregation. If one virtual machine of the Plan failed to be migrated, it is possible to start a new Migration with the same Plan and only the virtual machines that have not been migrated previously will be migrated.
 
 Along with the custom resource definitions, there are four new services running in the cluster:
 
-Provider Inventory Service - It connects to the source or destination providers and gathers a local inventory that is used to create the mappings and plans. Each provider has its own inventory pod to allow for better scalability.
-Validation Service - It ships the rules to verify the virtual machine's suitability to run in OpenShift Virtualization. The Provider Inventory Service calls it whenever the configuration of a virtual machine changes and stores the validation status for better reactivity.
-User Interface - It proposes a graphical experience to manipulate the custom resources managed by Migration Toolkit for Virtualization. It also provides a visual representation of the state of these resources, as well as progress for the migration processes.
-Controllers - They implement the logic to reconcile the custom resources with the state defined by the user. For example, when a Plan is created, it runs a series of validations and labels the CR with the results ; if some blocker is found, the Plan stays in state NotReady and no Migration can start from this Plan. It also aggregates the state of related custom resources to provide a holistic and consistent state of the migration solution.
+* Provider Inventory Service - It connects to the source or destination providers and gathers a local inventory that is used to create the mappings and plans. Each provider has its own inventory pod to allow for better scalability.
+* Validation Service - It ships the rules to verify the virtual machine's suitability to run in OpenShift Virtualization. The Provider Inventory Service calls it whenever the configuration of a virtual machine changes and stores the validation status for better reactivity.
+* User Interface - It proposes a graphical experience to manipulate the custom resources managed by Migration Toolkit for Virtualization. It also provides a visual representation of the state of these resources, as well as progress for the migration processes.
+* Controllers - They implement the logic to reconcile the custom resources with the state defined by the user. For example, when a Plan is created, it runs a series of validations and labels the CR with the results ; if some blocker is found, the Plan stays in state NotReady and no Migration can start from this Plan. It also aggregates the state of related custom resources to provide a holistic and consistent state of the migration solution.
