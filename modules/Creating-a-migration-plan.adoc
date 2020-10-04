@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// doc-Migration_Toolkit_for_Virtualization-2.0/master.adoc
+
+[id="creating-a-migration-plan_{context}"]
+= Creating a migration plan
+
+TBD
+
+[discrete]
+== Prerequisites
+
+
+[discrete]
+== Procedure
+
+
+[discrete]
+== Additional resources

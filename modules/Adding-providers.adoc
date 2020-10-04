@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// doc-Migration_Toolkit_for_Virtualization-2.0/master.adoc
+
+[id="adding-providers_{context}"]
+= Adding providers
+
+TBD
+
+[discrete]
+== Prerequisites
+
+
+[discrete]
+== Procedure
+
+
+[discrete]
+== Additional resources
