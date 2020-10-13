@@ -3,6 +3,7 @@
 :toc: macro
 :toc-title:
 :imagesdir: images
+:kebab: Options menu image:kebab.png[title="Options menu"]
 :prewrap!:
 :mtv-short: MTV
 :mtv-full: Migration Toolkit for Virtualization

@@ -1,0 +1,28 @@
+// Module included in the following assemblies:
+//
+// * doc-mtv_2.0/master.adoc
+
+[id="selecting-provider-network_{context}"]
+= Selecting a migration network
+
+You can select a migration network for VMware ESXi hosts in the {mtv-short} console.
+
+The default network might not provide the best performance for migration. The migration network should provide at least 10 Gbps and jumbo frames, if possible. The network must be accessible to the OpenShift nodes through their default gateway because the source disks are copied by a Pod that is connected to the Pod network of the target namespace.
+
+If a VMware host network is not optimal for migration, a Warning icon is displayed beside the host number in the *Hosts* column of the provider list. 
+
+[discrete]
+== Procedure
+
+. In the {mtv-short} console, navigate to *Providers*.
+. Click the host number of a provider to view the host list and network details.
+. Select the hosts to be updated and click *Select migration network*.
+. Fill in the following fields:
+* *Host admin userid*: User name to connect to the ESXi hosts
+* *Host admin password*: Password to connect to the ESXi hosts
+* *Network*: Select a network from the list of available networks.
+
+. Click *Check connection* to verify the credentials.
+. Click *Select* to select the migration network.
++
+The migration network appears in the network details of the updated hosts.

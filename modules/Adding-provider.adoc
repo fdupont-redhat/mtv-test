@@ -1,0 +1,43 @@
+// Module included in the following assemblies:
+//
+// doc-Migration_Toolkit_for_Virtualization-2.0/master.adoc
+
+[id="adding-provider_{context}"]
+ifdef::mtv[]
+= Adding an {virt} provider
+
+You can add a {virt} provider in the {mtv-short} console.
+endif::[]
+ifdef::vmware-provider[]
+= Adding a VMware provider
+
+You can add a VMware provider in the {mtv-short} console.
+endif::[]
+
+[discrete]
+== Procedure
+
+. In the {mtv-short} console, navigate to *Providers*.
+. Click *Add provider*.
+ifdef::mtv[]
+. Select *{virt}* from the *Type* list.
+. Fill in the following fields:
+
+* *Cluster name*: OpenShift cluster name to display in the list of providers
+* *URL*: OpenShift cluster API endpoint
+* *Service account token*: Generated earlier
+endif::[]
+ifdef::vmware-provider[]
+. Select *VMware* from the *Type* list.
+. Fill in the following fields:
+
+* *Name*: vCenter name to display in the list of providers
+* *Hostname*: vCenter host name or IP address
+* *Username*: vCenter user name
+* *Password*: vCenter password
+endif::[]
+
+. Click *Check connection* to verify the credentials.
+. Click *Add* to add and save the provider.
++
+The provider appears in the list of providers.

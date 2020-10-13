@@ -1,0 +1,43 @@
+// Module included in the following assemblies:
+//
+// doc-Migration_Toolkit_for_Virtualization-2.0/master.adoc
+
+[id="creating-mapping_{context}"]
+ifdef::mtv-network[]
+= Creating a network mapping
+
+You can create a network mapping to map VMware networks to {virt} networks.
+endif::[]
+ifdef::mtv-storage[]
+= Creating a storage mapping
+
+You can create a storage mapping to map VMware data stores to OpenShift storage classes.
+endif::[]
+
+[discrete]
+== Procedure
+
+ifdef::mtv-network[]
+. In the {mtv-short} console, navigate to *Mappings* -> *Network*.
+endif::[]
+ifdef::mtv-storage[]
+. In the {mtv-short} console, navigate to *Mappings* -> *Storage*.
+endif::[]
+. Click *Create mapping*.
+ifdef::mtv-network[]
+. Select one or more source networks in the left pane.
+. Drag the source networks to one or more target networks in the right pane.
+endif::[]
+ifdef::mtv-storage[]
+. Select one or more source data stores in the left pane.
+. Drag the data stores to one or more target storage classes in the right pane.
+endif::[]
+. Click *Add*.
+ifdef::mtv-network[]
++
+The mappings appear in the *Network mappings* tab. The VMware networks are mapped to {virt} networks.
+endif::[]
+ifdef::mtv-storage[]
++
+The mappings appear in the *Storage mappings* tab. The VMware data stores are mapped to OpenShift storage classes.
+endif::[]
