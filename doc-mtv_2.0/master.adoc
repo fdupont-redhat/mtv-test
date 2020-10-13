@@ -1,0 +1,72 @@
+= Migration Toolkit for Virtualization
+:imagesdir: images
+:vernum: 2.0
+:toc: left
+:toclevels: 3
+:numbered!:
+:compat-mode:
+:experimental:
+:context: mtv
+:mtv:
+include::modules/_mtv-document-attributes.adoc[]
+
+The {mtv-first} enables you to migrate a large number of virtual machines from VMWare vSphere to OpenShift Virtualization.
+
+== About the {MTV-full}
+
+{mtv-short} is deployed as an OpenShift Operator.
+
+include::modules/Mtv-architecture.adoc[leveloffset=+2]
+
+[id='planning-the-migration_{context}']
+== Planning the migration
+
+TBD
+
+== Installing and upgrading {mtv-short}
+
+include::modules/Installing-mtv.adoc[leveloffset=+2]
+include::modules/Upgrading-mtv.adoc[leveloffset=+2]
+
+[id='migrating-the-virtual-machines_{context}']
+== Migrating the virtual machines
+
+You can add providers, create network and storage mappings, and then create and run a migration plan in the {mtv-short} console
+
+[id='adding-providers_{context}']
+=== Adding providers
+
+You must add at least one VMware vSphere provider and one {virt} provider to the {mtv-short} console.
+
+include::modules/Adding-provider.adoc[leveloffset=+3]
+:mtv!:
+:context: vmware-provider
+:vmware-provider:
+include::modules/Adding-provider.adoc[leveloffset=+3]
+:vmware-provider!:
+:mtv:
+include::modules/Selecting-migration-network.adoc[leveloffset=+3]
+
+[id='creating-mappings_{context}']
+=== Creating mappings
+
+You must create mappings to map the VMware and {virt} networks and storage.
+
+:mtv!:
+:context: mtv-network
+:mtv-network:
+include::modules/Creating-mapping.adoc[leveloffset=+3]
+:mtv-network!:
+:context: mtv-storage
+:mtv-storage:
+include::modules/Creating-mapping.adoc[leveloffset=+3]
+:mtv-storage!:
+:mtv:
+include::modules/Creating-migration-plan.adoc[leveloffset=+2]
+
+[id='troubleshooting_{context}']
+== Troubleshooting
+
+include::modules/Collecting-logs.adoc[leveloffset=+2]
+
+:mtv!:

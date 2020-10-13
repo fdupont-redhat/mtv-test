@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 //
-// * doc-Migration_Toolkit_for_Virtualization-2.0/master.adoc
+// * doc-mtv_2.0/master.adoc
 
 [id="about-mtv_{context}"]
 = {mtv-full} architecture
