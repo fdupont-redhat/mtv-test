@@ -1,0 +1,45 @@
+// Module included in the following assemblies:
+//
+// doc-mtv_2.0/master.adoc
+
+[id="creating-mappings_{context}"]
+ifdef::mtv-network[]
+= Creating a network mapping
+
+You can create a network mapping to map VMware networks to {virt} networks.
+endif::[]
+ifdef::mtv-storage[]
+= Creating a storage mapping
+
+You can create a storage mapping to map VMware data stores to {virt} storage classes.
+endif::[]
+
+[discrete]
+== Procedure
+
+ifdef::mtv-network[]
+. In the {mtv-short} console, navigate to *Mappings* -> *Network*.
+endif::[]
+ifdef::mtv-storage[]
+. In the {mtv-short} console, navigate to *Mappings* -> *Storage*.
+endif::[]
+. Click *Create mapping*.
+ifdef::mtv-network[]
+. Select a *Source provider* and a *Target provider*.
+. Map your source and target networks by selecting a *Source network* and a *Target network*.
+. Click *Add* to create additional network mappings or to map more than one source network to a target network.
+endif::[]
+ifdef::mtv-storage[]
+. Select a *Source provider* and a *Target provider*.
+. Map your source and target data stores by selecting a *Source datastore* and a *Target storage class*.
+. Click *Add* to create additional network mappings or to map more than one source data store to a target data store.
+endif::[]
+. Click *Create*.
+ifdef::mtv-network[]
++
+The mapping is displayed in the *Network mappings* list.
+endif::[]
+ifdef::mtv-storage[]
++
+The mapping is displayed in the *Storage mappings* list.
+endif::[]
