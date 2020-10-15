@@ -10,7 +10,7 @@
 :mtv:
 include::modules/_mtv-document-attributes.adoc[]
 
-The {mtv-first} enables you to migrate a large number of virtual machines from VMWare vSphere to OpenShift Virtualization.
+The {mtv-first} enables you to migrate a large number of virtual machines from VMware vSphere to OpenShift Virtualization.
 
 == About the {MTV-full}
 
