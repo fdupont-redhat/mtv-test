@@ -23,15 +23,13 @@ include::modules/Mtv-architecture.adoc[leveloffset=+2]
 
 TBD
 
-== Installing and upgrading {mtv-short}
-
-include::modules/Installing-mtv.adoc[leveloffset=+2]
-include::modules/Upgrading-mtv.adoc[leveloffset=+2]
+include::modules/Installing-mtv.adoc[leveloffset=+1]
+include::modules/Upgrading-mtv.adoc[leveloffset=+1]
 
 [id='migrating-the-virtual-machines_{context}']
 == Migrating the virtual machines
 
-You can add providers, create network and storage mappings, and then create and run a migration plan in the {mtv-short} console
+You can add providers, create network and storage mappings, and create and run a migration plan in the {mtv-short} console.
 
 [id='adding-providers_{context}']
 === Adding providers
@@ -55,14 +53,16 @@ You must create mappings to map the VMware and {virt} networks and storage.
 :mtv!:
 :context: mtv-network
 :mtv-network:
-include::modules/Creating-mapping.adoc[leveloffset=+3]
+include::modules/Creating-mappings.adoc[leveloffset=+3]
 :mtv-network!:
 :context: mtv-storage
 :mtv-storage:
-include::modules/Creating-mapping.adoc[leveloffset=+3]
+include::modules/Creating-mappings.adoc[leveloffset=+3]
 :mtv-storage!:
 :mtv:
+include::modules/Creating-hooks.adoc[leveloffset=+2]
 include::modules/Creating-migration-plan.adoc[leveloffset=+2]
+include::modules/Running-migration-plan.adoc[leveloffset=+2]
 
 [id='troubleshooting_{context}']
 == Troubleshooting
