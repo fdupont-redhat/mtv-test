@@ -7,7 +7,6 @@
 :compat-mode:
 :experimental:
 :context: mtv
-:mtv:
 include::modules/_mtv-document-attributes.adoc[]
 
 The {mtv-first} enables you to migrate a large number of virtual machines from VMware vSphere to OpenShift Virtualization.
@@ -16,7 +15,7 @@ The {mtv-first} enables you to migrate a large number of virtual machines from V
 
 {mtv-short} is deployed as an OpenShift Operator.
 
-include::modules/Mtv-architecture.adoc[leveloffset=+2]
+// include::modules/Mtv-architecture.adoc[leveloffset=+2]
 
 [id='planning-the-migration_{context}']
 == Planning the migration
@@ -68,5 +67,6 @@ include::modules/Running-migration-plan.adoc[leveloffset=+2]
 == Troubleshooting
 
 include::modules/Collecting-logs.adoc[leveloffset=+2]
+include::modules/Known-issues.adoc[leveloffset=+2]
 
 :mtv!:

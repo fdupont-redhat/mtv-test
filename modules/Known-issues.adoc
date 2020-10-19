@@ -1,0 +1,54 @@
+// Module included in the following assemblies:
+//
+// * doc-mtv-2.0/master.adoc
+
+[id='known-issues_{context}']
+= Known issues
+
+== Unsupported VMware features
+
+The following VMware features are not supported by {virt}:
+
+* link:https://docs.vmware.com/en/Site-Recovery-Manager/index.html[Site Recovery Manager]
+* link:https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.resmgmt.doc/GUID-5E5E349A-4644-4C9C-B434-1C0243EBDC80.html?hWord=N4IghgNiBcICYAcC2IC+Q[Distributed Power Management]
+* VMDK with SCSI-3 persistent reservation
+
+== `POST /sdk: 503 Service Unavailable` error message
+
+If migration stops and a `POST /sdk: 503 Service Unavailable` error message is displayed in the `vm-import-controller` pod log, the server providing the `/sdk` API endpoint on the ESXi host is not responding.
+
+You can resolve this issue by restarting the `rhttpproxy` service on the ESXi host:
+
+[source,terminal]
+----
+$ services.sh restart rhttpproxy
+----
+
+== `vm-import-controller` has reached maximum limit of retries
+
+If migration does not resume after you have restarted the `rhttpproxy` service on the ESXi host, the `vm-import-controller` might have reached the maximum limit of retries.
+
+You can resolve this issue by deleting the `vm-import-controller` pod:
+
+. Get the `vm-import-controller` pod name:
+
+[source,terminal]
+----
+$ oc get pod -n openshift-cnv | grep vm-import-controller
+----
++
+.Example output
+[source,terminal]
+----
+NAME                                               READY   STATUS    RESTARTS   AGE
+vm-import-controller-5ceex6ts-1-dcd6c4c7c-jpw6k    1/1     Running   0          22h
+----
+
+. Delete the `vm-import-controller` pod:
++
+[source,terminal]
+----
+$ oc delete pod -n openshift-cnv <vm-import-controller-pod>
+----
++
+When the pod restarts, migration will resume.

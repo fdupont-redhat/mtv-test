@@ -12,29 +12,31 @@ A migration plan allows you to group virtual machines that should be migrated to
 [discrete]
 == Prerequisites
 
-* You have added the source and target providers to the {mtv-short} console.
-* You have ensured that the migration network is optimal for migration.
-* You have created a network mapping.
-* You have created a storage mapping.
+* The migration network supports migration.
+* The {mtv-short} console has source and target providers.
 
 [discrete]
 == Procedure
 
 . In the {mtv-short} console, navigate to *Migration plans* and click *Create migration plan*.
 . Fill in the following fields in the *General settings* screen:
-* *Plan name*: Name of the migration plan. Limitations? characters? Length?
-* *Plan description*: Optional: description of the migration plan.
+* *Plan name*: Plan name that is displayed in the {mtv-short} console.
+* *Plan description*: Optional. Brief description of the migration plan.
 * *Source provider*: Select a VMware provider.
 * *Target provider*: Select an {virt} provider.
 
 . Click *Next*.
-. Filter the VMs that you want to migrate by selecting a data centers, clusters, or folders.
+. Filter the VMs that you want to migrate by selecting data centers, clusters, or folders.
 . Select the VMs to migrate. You can click each VM to view its migration risk assessment.
 . Select an existing storage mapping or create a new storage mapping.
-. If you want to create a new storage mapping, select one or more source data stores in the left pane and drag and drop them on the associated target storage classes in the right pane.
+. If you want to create a new storage mapping:
+.. Select a data store from the *Source datastores* list and a storage class from the *Target storage classes* list.
+.. Click *Add* to create additional storage mappings or to map multiple data stores to a single storage class.
 . Click *Next*.
 . Select an existing network mapping or create a new network mapping.
-. If you want to create a new network mapping, select one or more source networks on the left pane and drag and drop them on the associated target networks in the right pane.
+. If you want to create a new network mapping:
+.. Select a network from the *Source networks* list and a network from the *Target networks* list.
+.. Click *Add* to create additional network mappings or to map multiple source networks to a single target network.
 . Click *Next*.
 . If you want to add a hook to the migration plan:
 
