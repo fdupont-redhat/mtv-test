@@ -5,22 +5,48 @@
 [id="about-mtv_{context}"]
 = About the {mtv-full}
 
-The {mtv-first} enables you to migrate a large number of virtual machines from VMWare vSphere to OpenShift Virtualization. {mtv-short} is deployed as an OpenShift Operator.
+You can migrate a large number of virtual machines from VMWare vSphere to OpenShift Virtualization with the {mtv-first}.
 
 // architecture diagram
 
-To be edited:
+== {mtv-short} Custom Resources
 
-When the {mtv-short} Operator is deployed, the following Custom Resources (CRs) are added to the API:
+{mtv-short} uses the following Custom Resources (CRs).
 
-* Provider: The Provider CR stores the attributes of a source or target provider. These attributes are used to connect to and interact with the provider.
-* Plan: The Plan CR is a list of virtual machines that are migrated together, with the same migration parameters. A throttling mechanism selects the VMs that will fit in the available migration resources, until all the VMs are migrated.
-* Mapping: The Mapping CR maps the source and target VMs and devices.
-* Migration - It is an instance of a Plan execution, including the progress aggregation. If one virtual machine of the Plan failed to be migrated, it is possible to start a new Migration with the same Plan and only the virtual machines that have not been migrated previously will be migrated.
+Provider CR::
+* Created when you add a source or target provider
+* Stores provider attributes in order to connect to and interact with the providers
+Plan CR::
+* Created when you create a migration plan
+* Contains a list of virtual machines that are migrated together with the same migration parameters
+* Selects VMs to fit the available migration resources until all VMs are migrated
+Mapping CR::
+* Created when you map the source and target networks or source and target storage
+Migration CR::
+* Created when you run a migration plan
+* Aggregates the migration progress
++  
+If a virtual machine fails to migrate, you can run a new migration with the same migration plan. Only the virtual machines that have not migrated will be migrated.
 
-Along with the custom resource definitions, there are four new services running in the cluster:
+== {mtv-short} services
 
-* Provider Inventory Service - It connects to the source or destination providers and gathers a local inventory that is used to create the mappings and plans. Each provider has its own inventory pod to allow for better scalability.
-* Validation Service - It ships the rules to verify the virtual machine's suitability to run in OpenShift Virtualization. The Provider Inventory Service calls it whenever the configuration of a virtual machine changes and stores the validation status for better reactivity.
-* User Interface - It proposes a graphical experience to manipulate the custom resources managed by Migration Toolkit for Virtualization. It also provides a visual representation of the state of these resources, as well as progress for the migration processes.
-* Controllers - They implement the logic to reconcile the custom resources with the state defined by the user. For example, when a Plan is created, it runs a series of validations and labels the CR with the results ; if some blocker is found, the Plan stays in state NotReady and no Migration can start from this Plan. It also aggregates the state of related custom resources to provide a holistic and consistent state of the migration solution.
+{mtv-short} uses the following services.
+
+Provider inventory service::
+* Connects to the source and target providers
+* Maintains a local inventory for mappings and plans
+* Uses separate Pods for each provider to enable scalability
+Validation service::
+* Assesses the suitability of a VM for running in {virt} by applying rules or flags
+* Triggered by the Provider Inventory service whenever a virtual machine configuration change is detected
+* Stores the VM validation status
+User interface::
+* Enables you to manipulate the {mtv-short} CRs
+* Indicates the state of the CRs
+* Displays the progress of a migration
+Controllers::
+* Implement the logic to reconcile the CRs with the state defined by the user
++  
+For example, when a Plan CR is created, the controllers validate the Plan and add a status label. If a Plan fails validation, its status is `Not ready` and the Plan cannot be used to perform a migration.
+
+* Aggregate the status of related CRs to provide a holistic and consistent view of the state of a migration
