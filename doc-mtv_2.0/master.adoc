@@ -11,11 +11,7 @@ include::modules/_mtv-document-attributes.adoc[]
 
 The {mtv-first} enables you to migrate a large number of virtual machines from VMware vSphere to {virt}.
 
-== About the {MTV-full}
-
-{mtv-short} is deployed as an OpenShift Operator.
-
-include::modules/Mtv-architecture.adoc[leveloffset=+2]
+include::modules/About-mtv.adoc[leveloffset=+1]
 
 [id='planning-the-migration_{context}']
 == Planning the migration

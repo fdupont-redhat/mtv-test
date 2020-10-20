@@ -5,8 +5,7 @@
 [id="about-mtv_{context}"]
 = About the {mtv-full}
 
-You can migrate a large number of virtual machines from VMWare vSphere to OpenShift Virtualization with the {mtv-first}.
-
+Placeholder for diagram
 // architecture diagram
 
 == {mtv-short} Custom Resources
