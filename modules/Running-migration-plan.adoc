@@ -8,6 +8,12 @@
 You can run a migration plan and view its progress in the {mtv-short} console.
 
 [discrete]
+== Prerequisites
+
+* You must power off the VMware VMs before migration.
+* You must be an admin user.
+
+[discrete]
 == Procedure
 
 . In the {mtv-short} console, navigate to *Migration plans*.
