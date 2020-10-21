@@ -31,7 +31,7 @@ If migration does not resume after you have restarted the `rhttpproxy` service o
 You can resolve this issue by deleting the `vm-import-controller` pod:
 
 . Get the `vm-import-controller` pod name:
-
++
 [source,terminal]
 ----
 $ oc get pod -n openshift-cnv | grep vm-import-controller
