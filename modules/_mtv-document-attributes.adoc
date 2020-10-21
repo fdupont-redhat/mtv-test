@@ -10,3 +10,5 @@
 :mtv-first: {mtv-full} ({mtv-short})
 :mtv-version: 2.0
 :virt: OpenShift Virtualization
+:ocp: OpenShift Container Platform
+:ocp-version: 4.5

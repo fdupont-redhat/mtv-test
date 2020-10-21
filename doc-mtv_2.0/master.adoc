@@ -13,12 +13,16 @@ The {mtv-first} enables you to migrate a large number of virtual machines from V
 
 include::modules/About-mtv.adoc[leveloffset=+1]
 
-[id='planning-the-migration_{context}']
-== Planning the migration
+[id='planning-your-migration_{context}']
+== Planning your migration
 
 TBD
 
 include::modules/Installing-mtv.adoc[leveloffset=+1]
+
+[discrete]
+include::modules/Adding-vddk-to-mtv.adoc[leveloffset=+2]
+
 include::modules/Upgrading-mtv.adoc[leveloffset=+1]
 
 [id='migrating-the-virtual-machines_{context}']

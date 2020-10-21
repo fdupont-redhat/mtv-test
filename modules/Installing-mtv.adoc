@@ -8,9 +8,6 @@
 You can install the {mtv-first} by using the {virt} web console or the CLI.
 
 [discrete]
-== Prerequisites
-
-
-[discrete]
 == Procedure
 
+TBD

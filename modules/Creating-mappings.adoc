@@ -7,11 +7,21 @@ ifdef::mtv-network[]
 = Creating a network mapping
 
 You can create a network mapping to map VMware networks to {virt} networks.
+
+[NOTE]
+====
+You cannot map an opaque network to a {virt} network.
+====
 endif::[]
 ifdef::mtv-storage[]
 = Creating a storage mapping
 
 You can create a storage mapping to map VMware data stores to {virt} storage classes.
+
+[discrete]
+== Prerequisites
+
+* The local and shared persistent storage must support VM migration. 
 endif::[]
 
 [discrete]
