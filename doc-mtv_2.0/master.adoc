@@ -13,14 +13,19 @@ The {mtv-first} enables you to migrate a large number of virtual machines from V
 
 include::modules/About-mtv.adoc[leveloffset=+1]
 
-[id='planning-your-migration_{context}']
-== Planning your migration
+[id='planning-the-migration_{context}']
+== Planning the migration - to do
 
 TBD
 
-include::modules/Installing-mtv.adoc[leveloffset=+1]
+== Installing the {mtv-full}
 
-[discrete]
+You can install the {mtv-first} by using the {virt} web console or the CLI.
+
+Then you can create a VMware Virtual Disk Development Kit (VDDK) image. {mtv-short} uses VDDK to copy the source disks.
+
+include::modules/Installing-mtv-console.adoc[leveloffset=+2]
+include::modules/Installing-mtv-cli.adoc[leveloffset=+2]
 include::modules/Adding-vddk-to-mtv.adoc[leveloffset=+2]
 
 include::modules/Upgrading-mtv.adoc[leveloffset=+1]

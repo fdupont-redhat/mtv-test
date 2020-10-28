@@ -3,7 +3,7 @@
 // doc-mtv_2.0/master.adoc
 
 [id="collecting-logs_{context}"]
-= Collecting logs
+= Collecting logs - to do
 
 TBD
 

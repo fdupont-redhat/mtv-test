@@ -1,0 +1,8 @@
+// Module included in the following assemblies:
+//
+// doc-mtv_2.0/master.adoc
+
+[id="installing-mtv-cli_{context}"]
+= Installing {mtv-short} from the CLI - to do
+
+You can install the {mtv-full} from the CLI.

@@ -5,8 +5,6 @@
 [id='adding-vddk-to-mtv_{context}']
 = Adding a VDDK image to {mtv-short}
 
-{mtv-short} uses the VMware Virtual Disk Development Kit (VDDK) to copy the source disks.
-
 You can create a VDDK image and store it in a private image registry. Then, you can add the image to the `v2v-vmware` ConfigMap.
 
 [NOTE]
@@ -19,7 +17,7 @@ Storing the VDDK image in a public registry might violate the terms of the VMwar
 
 * An internal link:https://docs.openshift.com/container-platform/{ocp-version}/registry/configuring_registry_storage/configuring-registry-storage-baremetal.html[{ocp} image registry] or a secure link:https://docs.openshift.com/container-platform/{ocp-version}/registry/registry-options.html[external registry]
 * Access to the image registry from your {virt} environment
-* Podman
+* Podman installed
 
 [discrete]
 == Procedure

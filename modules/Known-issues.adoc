@@ -3,7 +3,9 @@
 // * doc-mtv-2.0/master.adoc
 
 [id='known-issues_{context}']
-= Known issues
+= Known issues - in progress
+
+This section describes known issues and steps to resolve them.
 
 == Unsupported VMware features
 
@@ -11,11 +13,11 @@ The following VMware features are not supported by {virt}:
 
 * VMware Site Recovery Manager (SRM). You can migrate the VM but SRM will not be enabled.
 * vSphere Distributed Power Management (DPM). You can migrate the VM but DPM will not be enabled.
-* VMDK with SCSI-3 persistent reservation (PR). You can migrate the VM but SCSI-3 PR will not be enabled.
+* VMDK with SCSI-3 persistent reservation (PR). You can migrate the VM but SCSI-3 PR will not be enabled. NEED INFO
 
 == `POST /sdk: 503 Service Unavailable` error message
 
-If migration stops and a `POST /sdk: 503 Service Unavailable` error message is displayed in the `vm-import-controller` pod log, the server providing the `/sdk` API endpoint on the ESXi host is not responding.
+If migration stops and a `POST /sdk: 503 Service Unavailable` error message is displayed in the `vm-import-controller` pod log, the likely cause is no response from the server providing the `/sdk` API endpoint on the ESXi host.
 
 You can resolve this issue by restarting the `rhttpproxy` service on the ESXi host:
 
@@ -30,7 +32,7 @@ If migration does not resume after you have restarted the `rhttpproxy` service o
 
 You can resolve this issue by deleting the `vm-import-controller` pod:
 
-. Get the `vm-import-controller` pod name:
+. Get the `vm-import-controller` pod:
 +
 [source,terminal]
 ----
@@ -48,7 +50,7 @@ vm-import-controller-5ceex6ts-1-dcd6c4c7c-jpw6k    1/1     Running   0          
 +
 [source,terminal]
 ----
-$ oc delete pod -n openshift-cnv <vm-import-controller-pod>
+$ oc delete pod -n openshift-cnv vm-import-controller-<5ceex6ts-1-dcd6c4c7c-jpw6k>
 ----
 +
 When the pod restarts, migration will resume.

@@ -1,0 +1,9 @@
+// Module included in the following assemblies:
+//
+// doc-mtv_2.0/master.adoc
+
+[id="installing-mtv-console_{context}"]
+= Installing {mtv-short} with the {virt} web console - to do
+
+You can install the {mtv-first} by using the {virt} web console.
+
