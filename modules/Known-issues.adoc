@@ -2,7 +2,7 @@
 //
 // * doc-mtv-2.0/master.adoc
 
-[id='known-issues_{context}']
+[id="known-issues_{context}"]
 = Known issues - in progress
 
 This section describes known issues and steps to resolve them.

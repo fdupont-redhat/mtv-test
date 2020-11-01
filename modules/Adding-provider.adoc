@@ -6,18 +6,18 @@
 ifdef::mtv[]
 = Adding an {virt} provider
 
-You can add a {virt} provider in the {mtv-short} console.
+You can add a {virt} provider in the web console.
 endif::[]
 ifdef::vmware-provider[]
 = Adding a VMware provider
 
-You can add a VMware provider in the {mtv-short} console.
+You can add a VMware provider in the web console.
 endif::[]
 
 [discrete]
 == Procedure
 
-. In the {mtv-short} console, navigate to *Providers* and click *Add provider*.
+. In the web console, navigate to *Providers* and click *Add provider*.
 ifdef::mtv[]
 . Select *{virt}* from the *Type* list.
 . Fill in the following fields:
