@@ -9,8 +9,15 @@ You can migrate virtual machines from the command line (CLI) by creating the fol
 
 * Secret: Contains the VMware vSphere credentials
 * Provider: Specifies the VMware provider
-* Plan: Specifies the source and target clusters, network mapping, data store mapping, and VMs to migrate
-* Migration: Runs the migration plan
+* Plan: Specifies the source and target clusters, network mappings, data store mappings, and VMs to migrate
+* Migration: Runs the Plan
++  
+If a Migration does not complete, you can create a new Migration CR, referencing the same Plan, to migrate the remaining VMs.
+
+.Prerequisites
+
+* link:https://docs.openshift.com/container-platform/{ocp-version}/cli_reference/openshift_cli/getting-started-cli.html[OpenShift CLI] installed
+* Admin privileges
 
 .Procedure
 
@@ -140,5 +147,3 @@ EOF
 ----
 
 The Migration CR creates a `VirtualMachineImport` CR for each VM being migrated. You can monitor the progress of the migration by viewing the `VirtualMachineImport` pods in the `openshift-migration` namespace.
-
-If a migration does not complete, you can create a new Migration CR, referencing the same Plan, to migrate the remaining VMs.

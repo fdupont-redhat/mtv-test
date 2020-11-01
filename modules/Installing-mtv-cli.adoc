@@ -27,7 +27,7 @@ metadata:
 EOF
 ----
 
-. Create an operator group for the `openshift-migration` project:
+. Create an operator group for the `openshift-migration` namespace:
 +
 [source,terminal]
 ----
@@ -81,7 +81,7 @@ spec:
 EOF
 ----
 
-. View the resources created by the `virt-operator`:
+. View the resources created by the `virt-controller`:
 +
 [source,terminal]
 ----

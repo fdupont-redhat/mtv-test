@@ -10,8 +10,7 @@ You can run a migration plan and view its progress in the web console.
 [discrete]
 == Prerequisites
 
-* You must power off the VMware VMs before migration.
-* You must be an admin user.
+* The VMware VMs must be powered off.
 
 [discrete]
 == Procedure
