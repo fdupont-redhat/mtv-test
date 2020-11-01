@@ -27,7 +27,7 @@ metadata:
 EOF
 ----
 
-. Create an operator group for the `openshift-migration` namespace:
+. Create an OperatorGroup object called `migration`:
 +
 [source,terminal]
 ----
@@ -44,7 +44,7 @@ spec:
 EOF
 ----
 
-. Create a `virt-operator` subscription:
+. Create a Subscription object for the `virt-operator`:
 +
 [source,terminal]
 ----
@@ -65,7 +65,7 @@ spec:
 EOF
 ----
 
-. Create a `virt-controller` custom resource:
+. Create a VirtController object:
 +
 [source,terminal]
 ----
@@ -81,7 +81,7 @@ spec:
 EOF
 ----
 
-. View the resources created by the `virt-controller`:
+. View the resources created by the VirtController:
 +
 [source,terminal]
 ----
