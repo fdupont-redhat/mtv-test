@@ -6,7 +6,11 @@
 ifdef::mtv[]
 = Adding an {virt} provider
 
-You can add a {virt} provider in the web console.
+You can add an {virt} provider in the web console.
+
+.Prerequisites
+
+* link:https://docs.openshift.com/container-platform/{ocp-version}/authentication/using-service-accounts-in-applications.html[`VirtController` service account token]
 endif::[]
 ifdef::vmware-provider[]
 = Adding a VMware provider
@@ -14,8 +18,7 @@ ifdef::vmware-provider[]
 You can add a VMware provider in the web console.
 endif::[]
 
-[discrete]
-== Procedure
+.Procedure
 
 . In the web console, navigate to *Providers* and click *Add provider*.
 ifdef::mtv[]
@@ -24,7 +27,7 @@ ifdef::mtv[]
 
 * *Cluster name*: OpenShift cluster name to display in the list of providers
 * *URL*: OpenShift cluster API endpoint
-* *Service account token*: Generated earlier
+* *Service account token*: VirtController service account token
 endif::[]
 ifdef::vmware-provider[]
 . Select *VMware* from the *Type* list.

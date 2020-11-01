@@ -7,6 +7,7 @@
 :compat-mode:
 :experimental:
 :context: mtv
+:mtv:
 include::modules/_mtv-document-attributes.adoc[]
 
 The {mtv-first} enables you to migrate a large number of virtual machines from VMware vSphere to {virt}.
@@ -33,14 +34,21 @@ include::modules/Adding-vddk-to-mtv.adoc[leveloffset=+2]
 [id="migrating-virtual-machines_{context}"]
 == Migrating virtual machines
 
-You can add providers, create network and storage mappings, and create and run a migration plan in the web console or from the CLI.
+You can migrate virtual machines with the web console or from the CLI.
 
-=== Migrating virtual machines in the web console
+[id="migrating-virtual-machines-in-the-web-console_{context}"]
+=== Migrating virtual machines with the web console
 
+You can add providers, create network and storage mappings, and create and run a migration plan in the web console.
+
+[id="adding-providers_{context}"]
+==== Adding providers
+
+include::modules/Adding-provider.adoc[leveloffset=+4]
 :mtv!:
 :context: vmware-provider
 :vmware-provider:
-include::modules/Adding-provider.adoc[leveloffset=+3]
+include::modules/Adding-provider.adoc[leveloffset=+4]
 :vmware-provider!:
 :mtv:
 // include::modules/Selecting-migration-network.adoc[leveloffset=+3]

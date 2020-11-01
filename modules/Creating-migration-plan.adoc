@@ -9,14 +9,12 @@ You can create a migration plan in the web console.
 
 A migration plan allows you to group virtual machines that should be migrated together or with the same migration parameters, for example, a percentage of the members of a cluster or a complete application.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The migration network supports migration.
 * The web console has source and target providers.
 
-[discrete]
-== Procedure
+.Procedure
 
 . In the web console, navigate to *Migration plans* and click *Create migration plan*.
 . Fill in the following fields in the *General settings* screen:
@@ -38,14 +36,14 @@ A migration plan allows you to group virtual machines that should be migrated to
 .. Select a network from the *Source networks* list and a network from the *Target networks* list.
 .. Click *Add* to create additional network mappings or to map multiple source networks to a single target network.
 . Click *Next*.
-. If you want to add a hook to the migration plan:
-
-.. Select an existing hook from the list or click *Add hook*.
-.. Select *Ansible playbook* or *Custom container image* as the hook definition.
-.. Select the migration step when you want the hook to run.
-.. Click *Add*.
-
-. Click *Next*.
+// . If you want to add a hook to the migration plan:
+// 
+// .. Select an existing hook from the list or click *Add hook*.
+// .. Select *Ansible playbook* or *Custom container image* as the hook definition.
+// .. Select the migration step when you want the hook to run.
+// .. Click *Add*.
+// 
+// . Click *Next*.
 . Review your migration plan and click *Finish*.
 +
 The migration plan is saved in the migration plan list.

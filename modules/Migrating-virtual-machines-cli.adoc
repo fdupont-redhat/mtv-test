@@ -33,7 +33,7 @@ $ openssl s_client \
 ----
 <1> Specify the vCenter host name.
 
-. Create a Secret with the VMware credentials:
+. Create a Secret object with the VMware credentials:
 +
 [source,terminal]
 ----
@@ -42,7 +42,7 @@ $ cat < EOF | oc apply -f -
 apiVersion: v1
 kind: Secret
 metadata:
-  name: vmware-provider-secret
+  name: vmware-secret
   namespace: openshift-migration
 type: Opaque
 stringData:
@@ -54,7 +54,7 @@ EOF
 <1> Specify the password.
 <2> Specify the thumbprint.
 
-. Create a Provider:
+. Create a Provider object for VMware vSphere:
 +
 [source,terminal]
 ----
@@ -69,14 +69,14 @@ spec:
   type: vsphere
   url: https://<vcenter.example.com>/sdk <1>
   secret:
-    name: vmware-provider-secret <2>
+    name: vmware-secret <2>
     namespace: openshift-migration
 EOF
 ----
-<1> Specify the vSphere API URL.
+<1> Specify the vSphere API end point.
 <2> Specify the Secret.
 
-. Create a Plan:
+. Create a Plan object for the migration:
 +
 [source,terminal]
 ----
@@ -128,7 +128,7 @@ EOF
 <3> Specify a source data store.
 <4> Specify VMs to migrate.
 
-. Create a Migration CR to run the migration plan:
+. Create a Migration object to run the Plan:
 +
 [source,terminal]
 ----
@@ -146,4 +146,4 @@ spec:
 EOF
 ----
 
-The Migration CR creates a `VirtualMachineImport` CR for each VM being migrated. You can monitor the progress of the migration by viewing the `VirtualMachineImport` pods in the `openshift-migration` namespace.
+The Migration creates a `VirtualMachineImport` object for each VM being migrated. You can monitor the progress of the migration by viewing the `VirtualMachineImport` pods in the `openshift-migration` namespace.
