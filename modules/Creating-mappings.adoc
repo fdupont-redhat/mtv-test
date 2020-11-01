@@ -28,10 +28,10 @@ endif::[]
 == Procedure
 
 ifdef::mtv-network[]
-. In the {mtv-short} console, navigate to *Mappings* -> *Network*.
+. In the web console, navigate to *Mappings* -> *Network*.
 endif::[]
 ifdef::mtv-storage[]
-. In the {mtv-short} console, navigate to *Mappings* -> *Storage*.
+. In the web console, navigate to *Mappings* -> *Storage*.
 endif::[]
 . Click *Create mapping*.
 ifdef::mtv-network[]

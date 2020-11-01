@@ -13,7 +13,7 @@ The {mtv-first} enables you to migrate a large number of virtual machines from V
 
 include::modules/About-mtv.adoc[leveloffset=+1]
 
-[id='planning-the-migration_{context}']
+[id="planning-the-migration_{context}"]
 == Planning the migration - to do
 
 TBD
@@ -30,15 +30,15 @@ include::modules/Adding-vddk-to-mtv.adoc[leveloffset=+2]
 
 include::modules/Upgrading-mtv.adoc[leveloffset=+1]
 
-[id='migrating-the-virtual-machines_{context}']
-== Migrating the virtual machines
+[id="migrating-virtual-machines-web-console_{context}"]
+== Migrating virtual machines with the web console
 
-You can add providers, create network and storage mappings, and create and run a migration plan in the {mtv-short} console.
+You can add providers, create network and storage mappings, and create and run a migration plan in the web console.
 
-[id='adding-providers_{context}']
+[id="adding-providers_{context}"]
 === Adding providers
 
-You must add at least one VMware vSphere provider and one {virt} provider to the {mtv-short} console.
+You must add at least one VMware vSphere provider and one {virt} provider to the web console.
 
 include::modules/Adding-provider.adoc[leveloffset=+3]
 :mtv!:
@@ -49,7 +49,7 @@ include::modules/Adding-provider.adoc[leveloffset=+3]
 :mtv:
 include::modules/Selecting-migration-network.adoc[leveloffset=+3]
 
-[id='creating-mappings_{context}']
+[id="creating-mappings_{context}"]
 === Creating mappings
 
 You must create mappings to map the VMware and {virt} networks and storage.
@@ -64,11 +64,13 @@ include::modules/Creating-mappings.adoc[leveloffset=+3]
 include::modules/Creating-mappings.adoc[leveloffset=+3]
 :mtv-storage!:
 :mtv:
-include::modules/Creating-hooks.adoc[leveloffset=+2]
+// include::modules/Creating-hooks.adoc[leveloffset=+2]
 include::modules/Creating-migration-plan.adoc[leveloffset=+2]
 include::modules/Running-migration-plan.adoc[leveloffset=+2]
 
-[id='troubleshooting_{context}']
+include::modules/migrating-virtual-machines-cli.adoc[leveloffset=+1]
+
+[id="troubleshooting_{context}"]
 == Troubleshooting
 
 include::modules/Collecting-logs.adoc[leveloffset=+2]
