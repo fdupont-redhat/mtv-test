@@ -47,7 +47,7 @@ include::modules/Adding-provider.adoc[leveloffset=+3]
 include::modules/Adding-provider.adoc[leveloffset=+3]
 :vmware-provider!:
 :mtv:
-include::modules/Selecting-migration-network.adoc[leveloffset=+3]
+// include::modules/Selecting-migration-network.adoc[leveloffset=+3]
 
 [id="creating-mappings_{context}"]
 === Creating mappings
