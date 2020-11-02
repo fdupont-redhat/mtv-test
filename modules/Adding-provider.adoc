@@ -35,7 +35,7 @@ ifdef::vmware-provider[]
 
 * *Name*: vCenter name to display in the list of providers
 * *Hostname*: vCenter host name or IP address
-* *Username*: vCenter user name
+* *Username*: vCenter admin user name, for example, `administrator@vsphere.local`
 * *Password*: vCenter password
 endif::[]
 
