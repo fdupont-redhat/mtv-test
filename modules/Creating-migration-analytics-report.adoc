@@ -7,10 +7,6 @@
 
 You can download VMware provider data in the {mtv-short} web console and upload it to the Migration Analytics service on link:https://cloud.redhat.com/migrations/migration-analytics[cloud.redhat.com] to create a Migration Analytics report.
 
-.Prerequisites
-
-* VMware provider has been added to the web console
-
 .Procedure
 
 . In the web console, navigate to *Providers*.
