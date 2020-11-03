@@ -12,6 +12,8 @@ include::modules/_mtv-document-attributes.adoc[]
 
 The {mtv-first} enables you to migrate a large number of virtual machines from VMware vSphere to {virt}.
 
+You can download the VMware provider data collected by {mtv-short} and upload it to the Migration Analytics service on link:https://cloud.redhat.com/migrations/migration-analytics[cloud.redhat.com] for a detailed workload analysis report and migration recommendations.
+
 include::modules/About-mtv.adoc[leveloffset=+1]
 
 [id="planning-the-migration_{context}"]
@@ -73,6 +75,20 @@ include::modules/Creating-migration-plan.adoc[leveloffset=+3]
 include::modules/Running-migration-plan.adoc[leveloffset=+3]
 
 include::modules/Migrating-virtual-machines-cli.adoc[leveloffset=+2]
+
+[id="using-migration-analytics_{context}"]
+== Analyzing your workloads with Migration Analytics
+
+You can use the Migration Analytics service at link:https://cloud.redhat.com[cloud.redhat.com] to analyze your VMware workloads and to provide migration recommendations.
+
+Migration Analytics generates a report that you can view in your browser or download as a CSV file.
+
+include::modules/About-migration-analytics-report.adoc[leveloffset=+2]
+include::modules/Creating-migration-analytics-report.adoc[leveloffset=+2]
+[discrete]
+include::modules/Filtering-migration-analytics-report.adoc[leveloffset=+2]
+[discrete]
+include::modules/Exporting-migration-analytics-report.adoc[leveloffset=+2]
 
 [id="troubleshooting_{context}"]
 == Troubleshooting
